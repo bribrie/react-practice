@@ -24,12 +24,14 @@ const AddUser = (props) => {
         title: "Invalid input",
         message: "Please enter a valid name and age (non-empty values).",
       });
+      return;
     }
     if (Number(enteredAge) < 1) {
       setError({
         title: "Invalid age",
         message: "Please enter a valid age (> 0).",
       });
+      return;
     }
     props.onAddUser(enteredUsername, enteredAge);
     setEnteredAge("");
