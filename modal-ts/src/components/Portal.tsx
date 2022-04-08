@@ -5,10 +5,9 @@ interface Props {
   children: ReactNode;
 }
 
-const Portal = ({ children }: Props) => {
-  const rootElement = document.getElementById("modal-root");
+const Portal = ({ children }: Props): JSX.Element => {
+  const rootElement = document.getElementById("modal-root") as HTMLElement;
 
-  // createPortal(rootElement)
   return <>{rootElement ? createPortal(children, rootElement) : children}</>;
 };
 
